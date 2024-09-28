@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="Shooty_C__UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Shooty_C__UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Black">
+
+    <Grid>
+        <!-- Apply RenderTransform with CompositeTransform to scale the Canvas -->
+        <Canvas x:Name="GameCanvas" Background="Black" Width="800" Height="600">
+            <Canvas.RenderTransform>
+                <CompositeTransform x:Name="CanvasRenderTransform" ScaleX="1" ScaleY="1"/>
+            </Canvas.RenderTransform>
+
+            <TextBlock x:Name="HitsTextBlock" Text="Hits: 0" Foreground="White" FontSize="20" Canvas.Left="10" Canvas.Top="10"/>
+            <TextBlock x:Name="TimerTextBlock" Text="Time: " Foreground="White" FontSize="20" Canvas.Left="10" Canvas.Top="40"/>
+            <TextBlock x:Name="PlayerShip" Text="&lt;-#-&gt;" Foreground="White" FontSize="20" Canvas.Left="375" Canvas.Top="550"/>
+        </Canvas>
+
+        <StackPanel x:Name="StartScreen" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Shooty" FontSize="48" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="HighScoreTextBlock" Text="High Score: 0" FontSize="24" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="LastScoreTextBlock" Text="Last Score: 0" FontSize="24" Foreground="White" HorizontalAlignment="Center"/>
+            <Button Content="Start Game" Click="StartGame_Click" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>
